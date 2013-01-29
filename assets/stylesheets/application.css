@@ -1,0 +1,106 @@
+@import url(/assets/stylesheets/reset.css);
+@import url(http://fonts.googleapis.com/css?family=Quattrocento+Sans);
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Quattrocento Sans', sans-serif;
+  color: #FFF;
+  font-size: 16px;
+  background: #000;
+}
+
+/* headings */
+h1,
+h2,
+h3 {
+  clear: both;
+}
+
+h1 {
+  font-size: 2.2em;
+  font-weight: normal;
+}
+
+/* links */
+a {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active,
+a:focus {
+  position: relative;
+  top: 1px;
+}
+
+/* helpers */
+.hide {
+  display: none;
+}
+
+/* layout */
+#main-header header {
+  float: left;
+  padding: 20px 20px;
+}
+
+#main-header .main-menu li {
+  border-left-width: 1px;
+  -webkit-border-image: -webkit-gradient(linear, 0 0, 0 100%, from(#666), to(rgba(0, 0, 0, 100))) 1 100%;
+  -webkit-border-image: -webkit-linear-gradient(rgba(0, 0, 0, 100), #666) 1 100%;
+  -o-border-image: -o-linear-gradient(#666, rgba(0, 0, 0, 100)) 1 100%;
+  -moz-border-image: -moz-linear-gradient(#666, rgba(0, 0, 0, 100)) 1 100%;
+}
+
+#main-header .main-menu li.primary {
+  float: left;
+  border-right-width: 1px;
+}
+
+#main-header .main-menu li.secondary {
+  float: right;
+}
+
+#main-header .main-menu li a {
+  padding: 33px 25px;
+  float: left;
+}
+
+/* Index styles ************************************************************/
+#main-content {
+  position: absolute;
+  top: 80px;
+  bottom: 4px;
+  width: 100%;
+}
+
+#main-content iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* Media Queries *************************************************************************************************************************/
+@media screen and (max-width: 900px) {
+  section {
+    min-width: 70%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  section {
+    min-width: 280px;
+    padding-right: 20px;
+  }
+}
