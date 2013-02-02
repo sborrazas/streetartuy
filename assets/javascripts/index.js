@@ -1,0 +1,35 @@
+(function (global) {
+
+  function openModal(id) {
+    var $modal = $(id);
+
+    $modal.css("margin-top", "-" + ($modal.height() / 2) + "px");
+    $modal.fadeIn(500);
+  }
+
+  function init() {
+    // Open modal links
+    $("a.modal-link").click(function (event) {
+      event.preventDefault();
+      openModal($(event.target).attr("rel"));
+    });
+
+    // Close modal links
+    $("a.close-modal").click(function (event) {
+      event.preventDefault();
+      $(".modal").fadeOut(500);
+    });
+  };
+
+  (function () {
+    var script = document.createElement("script")
+      , body = document.getElementsByTagName("body")[0];
+
+    script.type = "text/javascript";
+    script.async = true;
+    script.src = "https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"; // jQuery
+    script.onload = init;
+    body.appendChild(script);
+  }());
+
+}(window));
