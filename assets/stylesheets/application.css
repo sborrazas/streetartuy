@@ -108,6 +108,7 @@ a:focus {
   left: 50%;
   width: 400px;
   margin-left: -200px; /* - (width + padding) / 2 */
+  margin-top: -220px; /* - (height + padding) / 2 */
   background: #000;
 }
 
@@ -155,15 +156,57 @@ a:focus {
 }
 
 /* Media Queries *************************************************************************************************************************/
-@media screen and (max-width: 900px) {
-  section {
-    min-width: 70%;
+@media screen and (max-width: 800px) {
+  #main-header .main-menu li a {
+    padding: 20px 12px;
+  }
+  #main-header header {
+    padding: 9px 20px;
+  }
+  #main-content {
+    top: 54px;
   }
 }
 
-@media screen and (max-width: 400px) {
-  section {
-    min-width: 280px;
-    padding-right: 20px;
+@media screen and (max-width: 700px) {
+  #main-header header {
+    overflow: auto;
+    float: none;
+    text-align: center;
+  }
+
+  #main-header header h1,
+  #main-header header h2 {
+    float: none;
+    margin: 0;
+  }
+
+  #main-header .main-menu li.primary,
+  #main-header .main-menu li.secondary {
+    float: none;
+    margin-top: 15px;
+    text-align: center;
+    border: 0;
+  }
+  #main-header .main-menu li a {
+    float: none;
+    padding: 0;
+  }
+
+  #main-content {
+    /* top: 220px; */
+    position: relative;
+    top: inherit;
+    bottom: inherit;
+    margin-top: 20px;
+  }
+
+  .modal {
+    position: relative;
+    margin: 0;
+    top: inherit;
+    left: inherit;
+    margin-top: 20px;
+    width: inherit;
   }
 }

@@ -1,10 +1,7 @@
 (function (global) {
 
   function openModal(id) {
-    var $modal = $(id);
-
-    $modal.css("margin-top", "-" + ($modal.height() / 2) + "px");
-    $modal.fadeIn(500);
+    $(id).fadeIn(500);
   }
 
   function init() {
