@@ -8,6 +8,7 @@
     // Open modal links
     $("a.modal-link").click(function (event) {
       event.preventDefault();
+      event.stopPropagation();
       openModal($(event.target).attr("rel"));
     });
 
@@ -15,6 +16,14 @@
     $("a.close-modal").click(function (event) {
       event.preventDefault();
       $(".modal").fadeOut(500);
+    });
+
+    // Click outside modal
+    $(document).click(function (event) {
+      var $modal = $(".modal");
+      if ($modal.is(":visible")) {
+        $modal.fadeOut(500);
+      }
     });
   };
 
