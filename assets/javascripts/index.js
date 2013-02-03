@@ -27,19 +27,17 @@
 
     // Click outside modal
     $(document).click(function (event) {
-      console.log(event.target);
-      console.log($(event.target).parents(".modal").length === 0);
       var $modal = $(".modal")
         , $target = $(event.target)
-        , clickedInsideModal = $target.parents(".modal").length > 0 || $target.hasClass(".modal");
+        , clickedInsideModal = $target.parents(".modal").length > 0 || $target.hasClass("modal");
 
       if ($modal.is(":visible") && !clickedInsideModal) {
         $modal.fadeOut(500);
       }
     });
 
-    asyncScriptLoad("/assets/javascripts/jquery.tooltipster.min.js", function () {
-      $(".tooltip").tooltipster();
+    asyncScriptLoad("/assets/javascripts/bootstrap.min.js", function () {
+      $("[rel='tooltip']").tooltip();
     });
   });
 

@@ -1,4 +1,5 @@
 @import url(/assets/stylesheets/reset.css);
+@import url(/assets/stylesheets/bootstrap.min.css);
 @import url(http://fonts.googleapis.com/css?family=Quattrocento+Sans);
 
 html,
@@ -28,9 +29,10 @@ h1 {
 h2 {
   font-size: 0.9em;
   margin-left: 15px;
-  color: #88D3E7;
-  margin-top: 12px;
+  color: #93EBFD;
+  margin-top: 8px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 /* links */
@@ -51,7 +53,12 @@ a:focus {
   top: 1px;
 }
 
-/* helpers */
+/* Boostrap tooltips *************************************************/
+.tooltip {
+  font-size: 1.4em;
+}
+
+/* helpers ************************************************************/
 .hide {
   display: none;
 }
@@ -83,6 +90,17 @@ a:focus {
   padding: 33px 25px;
   float: left;
 }
+
+/* Icons *******************************************************************/
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 16px;
+  background-image: url(/assets/images/icons.png);
+  background-repeat: no-repeat;
+}
+
+.icon.dropdown { background-position: 0 9px; }
 
 /* Index styles ************************************************************/
 #main-content {
