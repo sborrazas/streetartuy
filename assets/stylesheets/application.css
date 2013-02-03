@@ -54,8 +54,12 @@ a:focus {
 }
 
 /* Boostrap tooltips *************************************************/
-.tooltip {
-  font-size: 1.4em;
+.tooltip-inner {
+  background: #444;
+}
+
+.tooltip.bottom .tooltip-arrow {
+  border-bottom-color: #444;
 }
 
 /* helpers ************************************************************/
@@ -100,7 +104,10 @@ a:focus {
   background-repeat: no-repeat;
 }
 
-.icon.dropdown { background-position: 0 9px; }
+.icon.dropdown {
+  background-position: 0 9px;
+  margin-left: 4px;
+}
 
 /* Index styles ************************************************************/
 #main-content {
