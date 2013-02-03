@@ -1,15 +1,22 @@
 (function (global) {
 
-  function openModal(id) {
-    $(id).fadeIn(500);
+  function asyncScriptLoad(url, callback) {
+    var script = document.createElement("script")
+      , body = document.getElementsByTagName("body")[0];
+
+    script.type = "text/javascript";
+    script.async = true;
+    script.src = url;
+    script.onload = callback;
+    body.appendChild(script);
   }
 
-  function init() {
+  asyncScriptLoad("https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js", function () {
     // Open modal links
     $("a.modal-link").click(function (event) {
       event.preventDefault();
       event.stopPropagation();
-      openModal($(event.target).attr("rel"));
+      $($(event.target).attr("rel")).fadeIn(500);
     });
 
     // Close modal links
@@ -20,22 +27,20 @@
 
     // Click outside modal
     $(document).click(function (event) {
-      var $modal = $(".modal");
-      if ($modal.is(":visible")) {
+      console.log(event.target);
+      console.log($(event.target).parents(".modal").length === 0);
+      var $modal = $(".modal")
+        , $target = $(event.target)
+        , clickedInsideModal = $target.parents(".modal").length > 0 || $target.hasClass(".modal");
+
+      if ($modal.is(":visible") && !clickedInsideModal) {
         $modal.fadeOut(500);
       }
     });
-  };
 
-  (function () {
-    var script = document.createElement("script")
-      , body = document.getElementsByTagName("body")[0];
-
-    script.type = "text/javascript";
-    script.async = true;
-    script.src = "https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"; // jQuery
-    script.onload = init;
-    body.appendChild(script);
-  }());
+    asyncScriptLoad("/assets/javascripts/jquery.tooltipster.min.js", function () {
+      $(".tooltip").tooltipster();
+    });
+  });
 
 }(window));

@@ -107,7 +107,7 @@ a:focus {
   left: 50%;
   width: 400px;
   margin-left: -200px; /* - (width + padding) / 2 */
-  margin-top: -220px; /* - (height + padding) / 2 */
+  margin-top: -180px; /* - (height + padding) / 2 */
   background: #000;
 }
 
