@@ -12,6 +12,8 @@
   }
 
   asyncScriptLoad("https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js", function () {
+    var $toggleNav = $("#toggle-nav");
+
     // Open modal links
     $("a.modal-link").click(function (event) {
       event.preventDefault();
@@ -34,6 +36,13 @@
       if ($modal.is(":visible") && !clickedInsideModal) {
         $modal.fadeOut(500);
       }
+    });
+
+    $toggleNav.click(function (event) {
+      event.preventDefault();
+
+      $toggleNav.toggleClass("active");
+      $("nav").toggleClass("active");
     });
 
     asyncScriptLoad("/assets/javascripts/bootstrap.min.js", function () {
