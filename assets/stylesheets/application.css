@@ -251,6 +251,8 @@ a#toggle-nav.active {
 
   .modal {
     width: inherit;
+    left: inherit;
+    margin-left: 0;
   }
 
   a#toggle-nav {
