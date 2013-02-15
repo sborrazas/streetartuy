@@ -164,7 +164,7 @@ a#toggle-nav.active {
   padding: 30px;
   top: 50%;
   left: 50%;
-  width: 400px;
+  width: 490px;
   margin-left: -200px; /* - (width + padding) / 2 */
   margin-top: -180px; /* - (height + padding) / 2 */
   background: #000;
